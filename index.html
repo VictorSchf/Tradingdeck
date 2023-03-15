@@ -22,23 +22,75 @@
             background-color: rgb(24, 22, 22);
         }
         #popup {
-        position: fixed;
-        background-color: rgb(24,22,22);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 75%;
-        height: 80%;
-        padding: 20px;
-        z-index: 5;
-        border-radius: 1rem;
-        box-sizing: border-box;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        }
+    position: fixed;
+    background-color: rgb(24,22,22);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 80%;
+    padding: 20px;
+    z-index: 5;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
 
-        #closeBtn, #linkBtn, #linkBtn2 {
+    @media only screen and (min-width: 1920px) {
+    #popup {
+    width: 75%;
+    height: 80%;
+    }
+    }
+
+    /* Stile für große Bildschirme */
+    @media only screen and (max-width: 1800px) {
+    #popup {
+        width: 50%;
+        height: 50%;
+    }
+    }
+
+    /* Stile für mittelgroße Bildschirme */
+    @media only screen and (max-width: 1199px) and (min-width: 992px) {
+    #popup {
+        width: 70%;
+        height: 60%;
+    }
+    }
+
+    /* Stile für kleine Bildschirme */
+    @media only screen and (max-width: 991px) and (min-width: 768px) {
+    #popup {
+        width: 80%;
+        height: 70%;
+    }
+    }
+
+    /* Stile für sehr kleine Bildschirme */
+    @media only screen and (max-width: 767px) {
+    #popup {
+        width: 90%;
+        height: 80%;
+    }
+    }
+
+
+    .UeberschriftPopup {
+        color: white;
+        font-size: 300%;
+    }
+
+    .SchriftPopup {
+        color: white;
+        font-size: 200%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #closeBtn, #linkBtn, #linkBtn2 {
         display: inline-block;
         width: 25%;
         margin-top: 20px;
@@ -51,24 +103,58 @@
         cursor: pointer;
         font-size: 150%;
         font-weight: 800;
-        }
+    }
 
+    #closeBtn:hover, #linkBtn:hover, #linkBtn2:hover {
+        background-color: black;
+    }
 
-        #closeBtn:hover, #linkBtn:hover, #linkBtn2:hover {
-            background-color: black;
+    /* Media queries for responsive design */
+
+    @media only screen and (max-width: 768px) {
+        #popup {
+            width: 90%;
+            height: 90%;
         }
 
         .UeberschriftPopup {
-            color: white;
-            font-size: 300%;
+            font-size: 200%;
         }
 
         .SchriftPopup {
-            color: white;
-            font-size: 200%;
-            padding-left: 5%;
-            padding-right: 5%;
+            font-size: 150%;
+            padding-left: 10%;
+            padding-right: 10%;
         }
+
+        #closeBtn, #linkBtn, #linkBtn2 {
+            width: 40%;
+            font-size: 120%;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        #popup {
+            width: 100%;
+            height: 100%;
+        }
+
+        .UeberschriftPopup {
+            font-size: 150%;
+        }
+
+        .SchriftPopup {
+            font-size: 120%;
+            padding-left: 15%;
+            padding-right: 15%;
+        }
+
+        #closeBtn, #linkBtn, #linkBtn2 {
+            width: 50%;
+            font-size: 100%;
+        }
+    }
+
 
         #overlay {
             position: fixed;
