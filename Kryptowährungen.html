@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Tradingdeck</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: rgb(192, 0, 0);
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: rgb(24, 22, 22);
+        }
+        
+        .header {
+            width: 100%;
+            height: auto;
+            background-color: #000;
+            justify-content: space-between;
+        }
+        
+        .header-img {
+            width: 8%;
+            height: 95%;
+            margin-left: 1%;
+            object-fit: cover;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav {
+            text-decoration-color: white;
+            position: relative;
+            object-position: right;
+            float: right;
+            margin-right: 0%;
+            width: 75%;
+            height: 12%;
+            font-weight: 700;
+            font-size: 1.4em;
+            margin-top: 4rem;
+            margin-left: 1rem;
+        }
+        
+        .nav-single:hover {
+            text-decoration: underline;
+        }
+        
+        .nav-single {
+            margin-right: 10rem;
+            float: right;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            margin-bottom: 12px;
+        }
+        
+        #myUL {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #myUL li a {
+            margin-top: -1px;
+            /* Prevent double borders */
+            background-color: #1d1b2b;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: rgb(215, 215, 215);
+            display: block;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        
+        #myUL li a:hover {
+            box-shadow: 0 1.9rem 3.8rem rgb(0, 0, 0), 0 1.5rem 1.2rem #1d1b2b;
+            transform: translate(0, -0.5rem);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html"><img src="logo.png" alt="tradingdeck logo" class="header-img" href="index.html"></a>
+
+        <div class="nav">
+            <a href="Über-Uns.html" class="nav-single über uns">Über uns</a>
+            <a href="Kryptowährungen.html" class="nav-single krypto">Kryptowährungen</a>
+            <a href="Aktien.html" class="nav-single krypto">Aktien</a>
+            <a href="FAQ.html" class="nav-single faq">FAQ</a>
+            <a href="Unsere-Favoriten.html" class="nav-single fav">Unsere Favoriten</a>
+        </div>
+    </div>
+
+    <div>
+
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Suche nach Kryptowährungen auf Tradingdeck" title="Type in a name">
+
+        <ul id="myUL">
+            <li><a href="Avalanche.html">Avalanche</a></li>
+            <li><a href="Binance-Coin.html">Binance Coin</a></li>
+            <li><a href="Bitcoin.html">Bitcoin</a></li>
+            <li><a href="BTC-Cash.html">BTC-Cash</a></li>
+            <li><a href="Cardano.html">Cardano</a></li>
+            <li><a href="Chainlink.html">Chainlink</a></li>
+            <li><a href="Dogecoin.html">Dogecoin</a></li>
+            <li><a href="EOS.html">EOS</a></li>
+            <li><a href="Ethereum.html">Ethereum</a></li>
+            <li><a href="Litecoin.html">Litecoin</a></li>
+            <li><a href="Polkadot.html">Polkadot</a></li>
+            <li><a href="Ripple.html">Ripple</a></li>
+            <li><a href="Shiba-Inu.html">Shiba Inu</a></li>
+            <li><a href="Solana.html">Solana</a></li>
+            <li><a href="Stellar.html">Stellar</a></li>
+            <li><a href="Terra.html">Terra</a></li>
+            <li><a href="Uniswap.html">Uniswap</a></li>
+            <li><a href="#">Ende aller verfügbaren Ergebnisse <p style="display:none;">abcdefghijklmnopqrstuvwxyz1234567890</p></a></li>
+        </ul>
+    </div>
+
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

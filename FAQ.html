@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Tradingdeck</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: rgb(192, 0, 0);
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: rgb(24, 22, 22);
+        }
+        
+        .header {
+            width: 100%;
+            height: auto;
+            background-color: #000;
+            justify-content: space-between;
+        }
+        
+        .header-img {
+            width: 8%;
+            height: 95%;
+            margin-left: 1%;
+            object-fit: cover;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav {
+            text-decoration-color: white;
+            position: relative;
+            object-position: right;
+            float: right;
+            margin-right: 0%;
+            width: 75%;
+            height: 12%;
+            font-weight: 700;
+            font-size: 1.4em;
+            margin-top: 4rem;
+            margin-left: 1rem;
+        }
+        
+        .nav-single:hover {
+            text-decoration: underline;
+        }
+        
+        .nav-single {
+            margin-right: 10rem;
+            float: right;
+        }
+        
+        .FAQ-Alles {
+            color: white;
+            font-size: 2rem;
+            border-radius: 10px;
+            margin: 1em;
+            background-color: #1d1b2b;
+            z-index: 2;
+            box-shadow: 1rem;
+        }
+
+        .FAQ {
+            font-weight: 600;
+        }
+
+        .FAQ-überschrift-alles {
+            font-size: 5rem;
+            font-weight: 500;
+        }
+
+        .FAQ-fragen {
+            font-size: 3rem;
+            content: " 🡳 "
+        }
+
+        .FAQ-antworten {
+            text-indent: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html"><img src="logo.png" alt="tradingdeck logo" class="header-img" href="index.html"></a>
+
+        <div class="nav">
+            <a href="Über-Uns.html" class="nav-single über uns">Über uns</a>
+            <a href="Kryptowährungen.html" class="nav-single krypto">Kryptowährungen</a>
+            <a href="Aktien.html" class="nav-single krypto">Aktien</a>
+            <a href="FAQ.html" class="nav-single faq">FAQ</a>
+            <a href="Unsere-Favoriten.html" class="nav-single fav">Unsere Favoriten</a>
+        </div>
+    </div>
+    <div class="FAQ-Alles">
+        <div class="FAQ-überschrift-alles">
+       <span class="FAQ">FAQ</span> - Häufig gestellte Fragen
+       </div>
+       <br>
+       <br>
+       <details>
+       <summary><span class="FAQ-fragen">Was ist Tradingdeck?</span> <br></summary>
+       <p><span class="FAQ-antworten">Tradingdeck ist eine Platform für Anleger um den Wert ihrer Aktien und Kryptowährungen zu überprüfen</span> <br></p>
+       </details>
+       <br>
+       <details>
+       <summary><span class="FAQ-fragen"> Kann man auf Tradingdeck Aktien oder Kryptowährungen kaufen?</span> <br> </summary>
+       <span class="FAQ-antworten">Nein, zum jetzigen Zeitpunkt ist es mit Tradingdeck nur möglich informationen über Aktien und Kryptowährungenzu beschaffen</span> <br>
+       </details>
+       <br>
+       <details>
+       <summary><span class="FAQ-fragen"> Warum finde ich Aktie ... nicht?</span> <br> </summary>
+       <span class="FAQ-antworten">Natürlich sind auf Tradingdeck nicht alle Aktien vertreten, wenn du aber vorschläge für weitere Aktien hast dann kontaktiere und gerne</span> <br> 
+       </details>
+       <br>
+       <details>
+       <summary><span class="FAQ-fragen"> Warum finde ich Kryptowährung ... nicht?</span> <br> </summary>
+       <span class="FAQ-antworten">Natürlich sind auf Tradingdeck nicht alle Kryptowährungen vertreten, wenn du aber vorschläge für weitere Kryptowährungen hast dann kontaktiere und gerne</span> <br>
+       </details>
+       <br>
+       <details>
+       <summary><span class="FAQ-fragen">Was ist Tradingdeck?</span> <br> </summary>
+       <span class="FAQ-antworten">Tradingdeck ist eine Platform für Anleger um den Wert ihrer Aktien und Kryptowährungen zu überprüfen</span> <br>
+       </details>
+       <br>
+       <details>
+        <summary><span class="FAQ-fragen">In welche Währung werden die Aktien auf Tradingdeck konvertiert?</span> <br></summary>
+        <p><span class="FAQ-antworten">Alle angaben auf Tradingdeck sind standardmäßig in US-Dollar angegeben, dies kann aber bei den meisten Info Widgets geändert werden</span> <br></p>
+        </details>
+        <br>
+        <details>
+        <summary><span class="FAQ-fragen">Woher kommen die Kurse und andere Information auf Tradingdeck</span> <br></summary>
+        <p><span class="FAQ-antworten">Alle Kurse und die meisten Informationen über Aktien und Kryptowährungen auf Tradingdeck werden von <a href="https://de.tradingview.com/">Tradingview.com</a> bereitgestellt</span> <br></p>
+        </details>
+    </div>
+
+</body>
+
+</html>

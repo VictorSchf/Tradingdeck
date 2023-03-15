@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Tradingdeck</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: rgb(192, 0, 0);
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: rgb(24, 22, 22);
+        }
+        
+        .header {
+            width: 100%;
+            height: auto;
+            background-color: #000;
+            justify-content: space-between;
+        }
+        
+        .header-img {
+            width: 8%;
+            height: 95%;
+            margin-left: 1%;
+            object-fit: cover;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav {
+            text-decoration-color: white;
+            position: relative;
+            object-position: right;
+            float: right;
+            margin-right: 0%;
+            width: 75%;
+            height: 12%;
+            font-weight: 700;
+            font-size: 1.4em;
+            margin-top: 4rem;
+            margin-left: 1rem;
+        }
+        
+        .nav-single:hover {
+            text-decoration: underline;
+        }
+        
+        .nav-single {
+            margin-right: 10rem;
+            float: right;
+        }
+        
+        .Favoriten {
+            color: white;
+            font-size: 3rem;
+            border-radius: 10px;
+            margin: 1em;
+            background-color: #1d1b2b;
+            box-shadow: 1rem;
+        }
+        
+        .Überschrift {
+            font-size: 5rem;
+            font-weight: 500;
+            color: white;
+        }
+        
+        .Überschrift-AK {
+            font-size: 5rem;
+            font-weight: 500;
+            padding-left: 1em;
+            color: white;
+        }
+        
+        .auflistung {
+            text-decoration-color: white;
+            padding-left: 3em;
+            color: white;
+        }
+        
+        .Fav-single:hover {
+            text-decoration: underline;
+            color: white;
+        }
+        
+        .Fav-single {
+            color: white;
+        }
+        
+        .list {
+            text-decoration-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html"><img src="logo.png" alt="tradingdeck logo" class="header-img" href="index.html"></a>
+
+        <div class="nav">
+            <a href="Über-Uns.html" class="nav-single über uns">Über uns</a>
+            <a href="Kryptowährungen.html" class="nav-single krypto">Kryptowährungen</a>
+            <a href="Aktien.html" class="nav-single krypto">Aktien</a>
+            <a href="FAQ.html" class="nav-single faq">FAQ</a>
+            <a href="Unsere-Favoriten.html" class="nav-single fav">Unsere Favoriten</a>
+
+        </div>
+    </div>
+
+    <div class="Favoriten">
+        <span class="Überschrift">Unsere Favoriten</span>
+        <br>
+        <br> Das ist eine Rubrik wo wir Unsere derzeitigen Favoriten im Bereich Aktien und Kryptowährungen vorstellen.
+        <br>
+        <br>
+        <div class="list">
+            <details>
+                <summary>
+                    <a href="Aktien.html"> <span class="Überschrift-AK">Aktien</span> <br> </summary>
+                </a>
+                <div class="auflistung">
+                    <details>
+                        <summary> <a href="Tesla.html"><span class="Fav-single">Tesla</span></a> <br> </summary>
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                                {
+                                    "symbol": "NASDAQ:TSLA",
+                                    "width": 350,
+                                    "height": 220,
+                                    "locale": "de_DE",
+                                    "dateRange": "12M",
+                                    "colorTheme": "dark",
+                                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                                    "isTransparent": false,
+                                    "autosize": false,
+                                    "largeChartUrl": "http://Apple.html"
+                                }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </details>
+                    <details>
+                        <summary> <a href="Intel-Corp.html"><span class="Fav-single">Intel Corp.</span></a> <br> </summary>
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                                {
+                                    "symbol": "NASDAQ:INTC",
+                                    "width": 350,
+                                    "height": 220,
+                                    "locale": "de_DE",
+                                    "dateRange": "12M",
+                                    "colorTheme": "dark",
+                                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                                    "isTransparent": false,
+                                    "autosize": false,
+                                    "largeChartUrl": "http://Apple.html"
+                                }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </details>
+                    <details>
+                        <summary> <a href="Rheinmetall.html"><span class="Fav-single">Rheinmetall</span></a> <br> </summary>
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                                {
+                                    "symbol": "XETR:RHM",
+                                    "width": 350,
+                                    "height": 220,
+                                    "locale": "de_DE",
+                                    "dateRange": "12M",
+                                    "colorTheme": "dark",
+                                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                                    "isTransparent": false,
+                                    "autosize": false,
+                                    "largeChartUrl": "http://Apple.html"
+                                }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </details>
+                    <details>
+                        <summary> <a href="Pfizer.html"><span class="Fav-single">Pfizer</span></a> <br> </summary>
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                                {
+                                    "symbol": "NYSE:PFE",
+                                    "width": 350,
+                                    "height": 220,
+                                    "locale": "de_DE",
+                                    "dateRange": "12M",
+                                    "colorTheme": "dark",
+                                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                                    "isTransparent": false,
+                                    "autosize": false,
+                                    "largeChartUrl": "http://Apple.html"
+                                }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </details>
+                    <details>
+                        <summary> <a href="Lightspeeed.html"><span class="Fav-single">Lightspeed E commerce</span></a> <br> </summary>
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                                {
+                                    "symbol": "NYSE:LSPD",
+                                    "width": 350,
+                                    "height": 220,
+                                    "locale": "de_DE",
+                                    "dateRange": "12M",
+                                    "colorTheme": "dark",
+                                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                                    "isTransparent": false,
+                                    "autosize": false,
+                                    "largeChartUrl": "http://Apple.html"
+                                }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </details>
+                </div>
+            </details>
+            <details>
+                <summary>
+                    <a href="Kryptowährungen.html"> <span class="Überschrift-AK">Kryptowährungen</span> <br> </summary>
+                </a>
+                <div class="auflistung">
+                    <details>
+                        <summary> <a href="Ethereum.html"><span class="Fav-single">Ethereum</span></a> <br> </summary>
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                                {
+                                    "symbol": "BINANCE:ETHUSDT",
+                                    "width": 350,
+                                    "height": 220,
+                                    "locale": "de_DE",
+                                    "dateRange": "12M",
+                                    "colorTheme": "dark",
+                                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                                    "isTransparent": false,
+                                    "autosize": false,
+                                    "largeChartUrl": "http://Apple.html"
+                                }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </details>
+                    <details>
+                        <summary> <a href="USD-Coin.html"><span class="Fav-single">USD-Coin</span></a> <br> </summary>
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                                {
+                                    "symbol": "FTX:COINUSD",
+                                    "width": 350,
+                                    "height": 220,
+                                    "locale": "de_DE",
+                                    "dateRange": "12M",
+                                    "colorTheme": "dark",
+                                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                                    "isTransparent": false,
+                                    "autosize": false,
+                                    "largeChartUrl": "http://Apple.html"
+                                }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </details>
+                    <details>
+                        <summary> <a href="Bitcoin.html"><span class="Fav-single">Bitocin</span></a> <br> </summary>
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                                {
+                                    "symbol": "BINANCE:BTCUSDT",
+                                    "width": 350,
+                                    "height": 220,
+                                    "locale": "de_DE",
+                                    "dateRange": "12M",
+                                    "colorTheme": "dark",
+                                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                                    "isTransparent": false,
+                                    "autosize": false,
+                                    "largeChartUrl": "http://Apple.html"
+                                }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </details>
+                    <details>
+                        <summary> <a href="Ripple.html"><span class="Fav-single">Ripple</span></a> <br> </summary>
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                                {
+                                    "symbol": "KRAKEN:XRPUSD",
+                                    "width": 350,
+                                    "height": 220,
+                                    "locale": "de_DE",
+                                    "dateRange": "12M",
+                                    "colorTheme": "dark",
+                                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                                    "isTransparent": false,
+                                    "autosize": false,
+                                    "largeChartUrl": "http://Apple.html"
+                                }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </details>
+                    <details>
+                        <summary> <a href="Litecoin.html"><span class="Fav-single">Litecoin</span></a> <br> </summary>
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                                {
+                                    "symbol": "BINANCE:LTCUSDT",
+                                    "width": 350,
+                                    "height": 220,
+                                    "locale": "de_DE",
+                                    "dateRange": "12M",
+                                    "colorTheme": "dark",
+                                    "trendLineColor": "rgba(41, 98, 255, 1)",
+                                    "underLineColor": "rgba(41, 98, 255, 0.3)",
+                                    "underLineBottomColor": "rgba(41, 98, 255, 0)",
+                                    "isTransparent": false,
+                                    "autosize": false,
+                                    "largeChartUrl": "http://Apple.html"
+                                }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </details>
+                </div>
+            </details>
+        </div>
+    </div>
+
+</body>
+
+</html>

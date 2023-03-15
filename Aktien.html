@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Tradingdeck</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: rgb(192, 0, 0);
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: rgb(24, 22, 22);
+        }
+        
+        .header {
+            width: 100%;
+            height: 150px;
+            background-color: #000;
+            justify-content: space-between;
+        }
+        
+        .header-img {
+            width: 8%;
+            height: 95%;
+            margin-left: 1%;
+            object-fit: cover;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav {
+            text-decoration-color: white;
+            position: relative;
+            object-position: right;
+            float: right;
+            margin-right: 0%;
+            width: 75%;
+            height: 12%;
+            font-weight: 700;
+            font-size: 1.4em;
+            margin-top: 4rem;
+            margin-left: 1rem;
+        }
+        
+        .nav-single:hover {
+            text-decoration: underline;
+        }
+        
+        .nav-single {
+            margin-right: 10rem;
+            float: right;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            margin-bottom: 12px;
+        }
+        
+        #myUL {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #myUL li a {
+            margin-top: -1px;
+            /* Prevent double borders */
+            background-color: #1d1b2b;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: rgb(215, 215, 215);
+            display: block;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        
+        #myUL li a:hover {
+            box-shadow: 0 1.9rem 3.8rem rgb(0, 0, 0), 0 1.5rem 1.2rem #1d1b2b;
+            transform: translate(0, -0.5rem);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html"><img src="logo.png" alt="tradingdeck logo" class="header-img" href="index.html"></a>
+
+        <div class="nav">
+            <a href="Über-Uns.html" class="nav-single über uns">Über uns</a>
+            <a href="Kryptowährungen.html" class="nav-single krypto">Kryptowährungen</a>
+            <a href="Aktien.html" class="nav-single krypto">Aktien</a>
+            <a href="FAQ.html" class="nav-single faq">FAQ</a>
+            <a href="Unsere-Favoriten.html" class="nav-single fav">Unsere Favoriten</a>
+        </div>
+    </div>
+
+    <div>
+
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Suche nach Aktien auf Tradingdeck" title="Type in a name">
+
+        <ul id="myUL">
+            <li><a href="Allianz.html">Allianz</a></li>
+            <li><a href="Alphabet.html">Alphabet</a></li>
+            <li><a href="Amazon.html">Amazon</a></li>
+            <li><a href="AMD.html">AMD</a></li>
+            <li><a href="Apple.html">Apple</a></li>
+            <li><a href="AT&T.html">AT&T</a></li>
+            <li><a href="Bayer.html">Bayer</a></li>
+            <li><a href="Coca-Cola.html">Coca Cola</a></li>
+            <li><a href="Comcast.html">Comcast</a></li>
+            <li><a href="Delta-Airlines.html">Delta Airlines</a></li>
+            <li><a href="Ford.html">Ford</a></li>
+            <li><a href="IBM.html">IBM</a></li>
+            <li><a href="Intel-Corp.html">Intel Corp.</a></li>
+            <li><a href="Johnson-&-Johnson.html">Johnson & Johnson</a></li>
+            <li><a href="JP-Morgan-Chase-&-Co.html">JP Morgan Chase & Co</a></li>
+            <li><a href="Lightspeed-Commerce.html">Lightspeed Commerce</a></li>
+            <li><a href="Lufthansa.html">Lufthansa</a></li>
+            <li><a href="Meta-Platforms.html">Meta Platforms</a></li>
+            <li><a href="Microsoft.html">Microsoft</a></li>
+            <li><a href="Nestlé.html">Nestlé</a></li>
+            <li><a href="Nvidia.html">Nvidia</a></li>
+            <li><a href="Pay-Pal-Holdings.html">PayPal Holdings</a></li>
+            <li><a href="Pfizer.html">Pfizer</a></li>
+            <li><a href="Rheinmetall.html">Rheinmetall</a></li>
+            <li><a href="Samsung.html">Samsung</a></li>
+            <li><a href="SAP.html">SAP</a></li>
+            <li><a href="Spotify.html">Spotify</a></li>
+            <li><a href="Starbucks-Corp.html">Starbucks Corp.</a></li>
+            <li><a href="Tencent.html">Tencent</a></li>
+            <li><a href="Tesla.html">Tesla</a></li>
+            <li><a href="Twitter-incorperated.html">Twitter inc.</a></li>
+            <li><a href="Wal-Mart-Stores.html">Wal-Mart Stores</a></li>
+            <li><a href="Walt-Disney-Company.html">Walt Disney Company</a></li>
+            <li><a href="#">Ende aller verfügbaren Ergebnisse <p style="display:none;">abcdefghijklmnopqrstuvwxyz1234567890</p></a></li>
+        </ul>
+    </div>
+
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

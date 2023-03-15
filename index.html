@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable="no">
+    <title src="logo.png">Tradingdeck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        a {
+            text-decoration: none;
+            color: rgb(192, 0, 0);
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: rgb(24, 22, 22);
+        }
+        
+        .header {
+            width: auto;
+            height: auto;
+            background-color: #000;
+            justify-content: space-between;
+        }
+        
+        .header-img {
+            width: 8%;
+            height: 95%;
+            margin-left: 1%;
+            object-fit: cover;
+        }
+        
+        .header-img:hover {
+            animation: spin 3s;
+            transition: 1s;
+        }
+        
+        @keyframes spin {
+            0% {
+                width: 8%;
+                height: 95%;
+                margin-left: 1%;
+                object-fit: cover;
+            }
+            100% {
+                width: 8%;
+                height: 95%;
+                margin-left: 1%;
+                object-fit: cover;
+                transform: rotate(7200deg);
+            }
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav {
+            text-decoration-color: white;
+            position: relative;
+            object-position: right;
+            float: right;
+            margin-right: 0%;
+            width: 75%;
+            height: 100%;
+            font-weight: 700;
+            font-size: 1.4em;
+            margin-top: 4rem;
+            margin-left: 1rem;
+        }
+        
+        .nav-single:hover {
+            text-decoration: underline;
+        }
+        
+        .nav-single {
+            margin-right: 10rem;
+        }
+        
+        .start {
+            width: 100%;
+        }
+        
+        .img-startpage {
+            width: 100%;
+            height: 49.1rem;
+            object-fit: cover;
+            display: block;
+            z-index: 1;
+        }
+        
+        .start span {
+            position: absolute;
+            bottom: 0;
+            width: 80%;
+            line-height: 1.4em;
+            text-align: left;
+            color: white;
+            font-size: 9em;
+            font-weight: 1000;
+            margin-left: 1%;
+            z-index: 2;
+        }
+        
+        .tradingview-widget-container-chart {
+            margin-top: 60rem;
+            float: left;
+            background-color: blueviolet;
+            z-index: 3;
+            position: absolute;
+            margin-left: 7rem;
+            border-radius: 2rem;
+            box-shadow: 0 1.9rem 3.8rem rgba(0, 0, 0, 0.3), 0 1.5rem 1.2rem rgba(0, 0, 0, 0.22);
+        }
+        
+        .tradingview-widget-container-chart:hover {
+            box-shadow: 0 1.9rem 3.8rem rgba(0, 0, 0, 0.3), 0 1.5rem 1.2rem rgba(0, 0, 0, 0.22);
+            transform: translate(0, -0.5rem);
+        }
+        
+        .tradingview-widget-container-chart-bg {
+            background-color: #1d1b2b;
+            width: 95%;
+            height: 50rem;
+            z-index: 2;
+            position: absolute;
+            margin-top: 56rem;
+            margin-left: 3rem;
+            border-radius: 2rem;
+            box-shadow: 1rem;
+        }
+        
+        .chart {
+            font-size: 5em;
+            font-weight: 1000;
+            position: absolute;
+            z-index: 3;
+            margin-top: 60rem;
+            margin-left: 77rem;
+            color: #fff;
+        }
+        
+        .chart:hover {
+            text-decoration: underline;
+        }
+        
+        .tradingview-widget-container-profil {
+            margin-top: 120rem;
+            float: left;
+            z-index: 3;
+            position: absolute;
+            margin-left: 7rem;
+            box-shadow: 0 1.9rem 3.8rem rgba(0, 0, 0, 0.3), 0 1.5rem 1.2rem rgba(0, 0, 0, 0.22);
+            height: 650px;
+        }
+        
+        .tradingview-widget-container-profil:hover {
+            box-shadow: 0 1.9rem 3.8rem rgba(0, 0, 0, 0.3), 0 1.5rem 1.2rem rgba(0, 0, 0, 0.22);
+            transform: translate(0, -0.5rem);
+        }
+        
+        .tradingview-widget-container-profil-bg {
+            background-color: #1d1b2b;
+            width: 95%;
+            height: 50rem;
+            z-index: 2;
+            position: absolute;
+            border-radius: 2rem;
+            box-shadow: 1rem;
+            margin-left: 3rem;
+            margin-top: 116rem;
+        }
+        
+        .profil {
+            font-size: 5em;
+            font-weight: 1000;
+            position: absolute;
+            z-index: 3;
+            margin-top: 120rem;
+            margin-left: 77rem;
+            color: #fff;
+        }
+        
+        .profil:hover {
+            text-decoration: underline;
+        }
+        
+        .tradingview-widget-container-finanzen-bg {
+            background-color: #1d1b2b;
+            width: 95%;
+            height: 50rem;
+            z-index: 2;
+            position: absolute;
+            border-radius: 2rem;
+            box-shadow: 1rem;
+            margin-left: 3rem;
+            margin-top: 176rem;
+        }
+        
+        .finanzen {
+            font-size: 5em;
+            font-weight: 1000;
+            position: absolute;
+            z-index: 3;
+            margin-top: 180rem;
+            margin-left: 77rem;
+            color: #fff;
+        }
+        
+        .finanzen:hover {
+            text-decoration: underline;
+        }
+        
+        .tradingview-widget-container-finanzen {
+            margin-top: 180rem;
+            position: absolute;
+            z-index: 3;
+            margin-left: 7rem;
+            box-shadow: 0 1.9rem 3.8rem rgba(0, 0, 0, 0.3), 0 1.5rem 1.2rem rgba(0, 0, 0, 0.22);
+            height: 650px;
+        }
+        
+        .tradingview-widget-container-finanzen:hover {
+            box-shadow: 0 1.9rem 3.8rem rgba(0, 0, 0, 0.3), 0 1.5rem 1.2rem rgba(0, 0, 0, 0.22);
+            transform: translate(0, -0.5rem);
+            height: 650px;
+        }
+        
+        .tradingview-widget-container-verkaufen-bg {
+            background-color: #1d1b2b;
+            width: 95%;
+            height: 50rem;
+            z-index: 2;
+            position: absolute;
+            border-radius: 2rem;
+            box-shadow: 1rem;
+            margin-left: 3rem;
+            margin-top: 236rem;
+        }
+        
+        .verkaufen {
+            font-size: 5em;
+            font-weight: 1000;
+            position: absolute;
+            z-index: 3;
+            margin-top: 241rem;
+            margin-left: 77rem;
+            color: #fff;
+        }
+        
+        .verkaufen:hover {
+            text-decoration: underline;
+        }
+        
+        .tradingview-widget-container-verkaufen {
+            margin-top: 240rem;
+            position: absolute;
+            z-index: 3;
+            margin-left: 7rem;
+            box-shadow: 0 1.9rem 3.8rem rgba(0, 0, 0, 0.3), 0 1.5rem 1.2rem rgba(0, 0, 0, 0.22);
+            height: 650px;
+        }
+        
+        .tradingview-widget-container-verkaufen:hover {
+            box-shadow: 0 1.9rem 3.8rem rgba(0, 0, 0, 0.3), 0 1.5rem 1.2rem rgba(0, 0, 0, 0.22);
+            transform: translate(0, -0.5rem);
+            height: 650px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 290rem;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .footer-datenschutzerklärung {
+            text-align: left;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        
+        .footer-impressum {
+            margin-left: 16px;
+            padding-right: 16px;
+        }
+        
+        .footer-kontakt {
+            padding-left: 16px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html"><img src="logo.png" alt="tradingdeck logo" class="header-img" href="index.html"></a>
+
+        <div class="nav">
+            <a href="Unsere-Favoriten.html" class="nav-single fav">Unsere Favoriten</a>
+            <a href="FAQ.html" class="nav-single faq">FAQ</a>
+            <a href="Aktien.html" class="nav-single aktien">Aktien</a>
+            <a href="Kryptowährungen.html" class="nav-single krypto">Kryptowährungen</a>
+            <a href="Über-Uns.html" class="nav-single über uns">Über uns</a>
+        </div>
+    </div>
+    <div class="start">
+        <img src="tradingbildschirme2 1080p.jpeg" class="img-startpage" usemap="#image-map">
+
+        <map name="image-map">
+            <area target="" alt="Bitcoin" title="Bitcoin" href="Bitcoin.html" coords="1543,312,1675,304,1668,427,1543,424" shape="poly">
+            <area target="" alt="Ethereum" title="Ethereum" href="Ethereum.html" coords="1698,297,1869,280,1861,431,1688,424" shape="poly">
+            <area target="" alt="EOS" title="EOS" href="EOS.html" coords="1538,442,1673,449,1667,577,1539,557" shape="poly">
+            <area target="" alt="BTC Cash" title="BTC Cash" href="BTC-Cash.html" coords="1686,442,1864,453,1852,602,1682,575" shape="poly">
+            <area target="" alt="Ripple" title="Ripple" href="Ripple.html" coords="1541,578,1664,601,1652,730,1528,692" shape="poly">
+            <area target="" alt="Stellar" title="Stellar" href="Stellar.html" coords="1684,591,1847,620,1833,766,1664,720" shape="poly">
+        </map>
+        <span>Unsere<br>Vision.<br>Ihre<br>Zukunft.</span>
+    </div>
+    <div class="erklaerungen">
+        <div class="tradingview-widget-container-chart-bg"></div>
+        <a href="Charts.html"><span class="chart">Unsere<br>Topmodernen<br>Charts für Sie<br>auf einen<br>Klick<br>verfügbar</span></a>
+
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container-chart">
+            <div id="tradingview_a1c90"></div>
+            <div class="tradingview-widget-copyright"><a href="https://de.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+                new TradingView.widget({
+                    "width": 1100,
+                    "height": 700,
+                    "symbol": "NASDAQ:AAPL",
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": "dark",
+                    "style": "1",
+                    "locale": "de_DE",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "container_id": "tradingview_a1c90"
+                });
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+
+
+        <div class="tradingview-widget-container-profil-bg"></div>
+        <a href="Firmenprofil.html"><span class="profil">Ausführliche<br>Firmen-<br>profile<br>auf Abruf<br>für Sie<br>verfügbar</span></a>
+        <!-- TradingView Widget BEGIN -->
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container-profil">
+            <div class="tradingview-widget-copyright"><a href="https://de.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js" async>
+                {
+                    "symbol": "NASDAQ:AAPL",
+                    "width": 1100,
+                    "height": 700,
+                    "colorTheme": "dark",
+                    "isTransparent": false,
+                    "locale": "de_DE"
+                }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+
+        <div class="tradingview-widget-container-finanzen-bg"></div>
+        <a href="Finanzprofil.html"><span class="finanzen">Unsere<br>Finanzprofile<br>eröffnen Ihnen<br>neue<br>Möglichkeiten<br>im Bereich<br>Analyse</span></a>
+
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container-finanzen">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
+                {
+                    "symbol": "NASDAQ:AAPL",
+                    "colorTheme": "dark",
+                    "isTransparent": false,
+                    "largeChartUrl": "",
+                    "displayMode": "regular",
+                    "width": 1100,
+                    "height": 700,
+                    "locale": "de_DE"
+                }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+
+        <div class="tradingview-widget-container-verkaufen-bg"></div>
+        <a href="Technische-Analyse.html"><span class="verkaufen">Immer<br>auf dem<br>neusten Stand<br>dank der<br>technischen Analysen</span></a>
+
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container-verkaufen">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://de.tradingview.com/symbols/NASDAQ-AAPL/technicals/" rel="noopener" target="_blank"><span class="blue-text"></span></a></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                {
+                    "interval": "1m",
+                    "width": "1100",
+                    "isTransparent": false,
+                    "height": "700",
+                    "symbol": "NASDAQ:AAPL",
+                    "showIntervalTabs": true,
+                    "locale": "de_DE",
+                    "colorTheme": "dark"
+                }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+    </div>
+    <div class="footer">
+        <span class="footer-impressum"><a href="Über-Uns.html">Impressum</a></span> |
+        <span class="footer-datenschutzerklärung"><a href="datenschutz.html" >Datenschutzerklärung</a></span> |
+        <a href="tos.html" class="footer-kontakt">Terms of Service</a>
+    </div>
+</body>
+
+</html>

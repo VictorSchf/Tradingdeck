@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Tradingdeck</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: rgb(192, 0, 0);
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background-color: rgb(24, 22, 22);
+        }
+        
+        .header {
+            width: 100%;
+            height: auto;
+            background-color: #000;
+            justify-content: space-between;
+        }
+        
+        .header-img {
+            width: 8%;
+            height: 95%;
+            margin-left: 1%;
+            object-fit: cover;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav {
+            text-decoration-color: white;
+            position: relative;
+            object-position: right;
+            float: right;
+            margin-right: 0%;
+            width: 75%;
+            height: 12%;
+            font-weight: 700;
+            font-size: 1.4em;
+            margin-top: 4rem;
+            margin-left: 1rem;
+        }
+        
+        .nav-single:hover {
+            text-decoration: underline;
+        }
+        
+        .nav-single {
+            margin-right: 10rem;
+            float: right;
+        }
+        
+        .fundamental-data {
+            position: absolute;
+            float: right;
+            margin-left: 30rem;
+        }
+        
+        .Technische-Analyse {
+            position: absolute;
+            float: right;
+            margin-left: 92.4rem;
+        }
+        
+        .Unternehmensprofil {
+            position: absolute;
+        }
+        
+        .unternehmensprofil-text {
+            width: 27rem;
+            height: 35rem;
+            position: absolute;
+            color: rgb(215, 215, 215);
+            margin-top: 5rem;
+            background-color: rgba(30, 34, 45, 255);
+            margin-left: 1.2rem;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        
+        button {
+            width: 6rem;
+            height: 1rem;
+            display: block;
+            float: none;
+            transform: translate(52rem, -54.1rem);
+            z-index: 2;
+        }
+        
+        button.chosen {
+            color: rgb(255, 215, 0);
+        }
+        
+        .Button-Fav {
+            color: #fff;
+            background-color: rgba(19, 23, 34, 255);
+            width: 2rem;
+            height: 2rem;
+            margin-top: 6.3rem;
+            margin-left: 31rem;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html"><img src="logo.png" alt="tradingdeck logo" class="header-img" href="index.html"></a>
+
+        <div class="nav">
+            <a href="Über-Uns.html" class="nav-single über uns">Über uns</a>
+            <a href="Kryptowährungen.html" class="nav-single krypto">Kryptowährungen</a>
+            <a href="Aktien.html" class="nav-single krypto">Aktien</a>
+            <a href="FAQ.html" class="nav-single faq">FAQ</a>
+            <a href="Unsere-Favoriten.html" class="nav-single fav">Unsere Favoriten</a>
+        </div>
+    </div>
+
+    <div class="chart">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div id="tradingview_23777"></div>
+            <div class="tradingview-widget-copyright"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+                new TradingView.widget({
+                    "width": 1902,
+                    "height": 800,
+                    "symbol": "BINANCE:ETHUSDT",
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": "dark",
+                    "style": "1",
+                    "locale": "de_DE",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "watchlist": [
+                        "BINANCE:BTCUSDT",
+                        "BINANCE:ETHUSDT",
+                        "BINANCE:BNBUSDT",
+                        "BINANCE:ADAUSDT",
+                        "FTX:SOLUSD",
+                        "KRAKEN:XRPUSD",
+                        "KRAKEN:DOTUSD",
+                        "FTX:SHIBUSD",
+                        "BINANCE:DOGEUSDT",
+                        "KUCOIN:LUNAUSDT",
+                        "KUCOIN:UNIUSDT",
+                        "BINANCE:LINKUSDT",
+                        "BINANCE:BCHUSDT",
+                        "KUCOIN:AVAXUSDT",
+                        "BINANCE:LTCUSDT",
+                        "BINANCE:EOSUSDT",
+                        "BINANCE:XLMUSDT"
+                    ],
+                    "container_id": "tradingview_23777"
+                });
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+    </div>
+    <!-- TradingView Widget END -->
+    </div>
+    <!-- TradingView Widget END -->
+    </div>
+    <div class="Unternehmensprofil">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js" async>
+                {
+                    "symbol": "BINANCE:ETHUSDT",
+                    "width": "480",
+                    "height": "830",
+                    "colorTheme": "dark",
+                    "isTransparent": false,
+                    "locale": "de_DE"
+                }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+    </div>
+    <div class="fundamental-data">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
+                {
+                    "symbol": "BINANCE:ETHUSDT",
+                    "colorTheme": "dark",
+                    "isTransparent": false,
+                    "largeChartUrl": "",
+                    "displayMode": "regular",
+                    "width": 1010,
+                    "height": 830,
+                    "locale": "de_DE"
+                }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+    </div>
+
+    <div class="Technische-Analyse">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                {
+                    "interval": "5m",
+                    "width": 425,
+                    "isTransparent": false,
+                    "height": 830,
+                    "symbol": "BINANCE:ETHUSDT",
+                    "showIntervalTabs": true,
+                    "locale": "de_DE",
+                    "colorTheme": "dark",
+                    "largeChartUrl": ""
+                }
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+    </div>
+    <div class="unternehmensprofil-text">
+        Ethereum ist eine dezentrale Software Plattform (Open Source) auf Basis der Blockchain-Technologie. Sie ermöglicht das Erstellen und Ausführen von sog. Smart Contracts und Decentralized Applications (dApps), welche ohne den Einfluss und die Kontrolle
+        von Drittparteien ausgeführt werden können.
+    </div>
+    <div class="Button-Fav">
+
+        <button class="Button-Fav"><span class="material-symbols-outlined">star</span></button>
+    </div>
+</body>
+<script>
+    'use strict';
+    document.addEventListener('DOMContentLoaded', function() {
+        let div = document.querySelector('div');
+        let button = document.querySelector('button');
+        div.addEventListener('click', () => {
+            event.currentTarget.classList.add('chosen');
+            console.log('Event-Handler für Div.');
+        });
+        button.addEventListener('click', event => {
+            event.currentTarget.classList.add('chosen');
+            console.log('Event-Handler für Button.');
+            if (document.getElementById('check')
+                .checked) {
+                event.stopPropagation();
+            }
+        });
+    });
+</script>
+
+</html>
