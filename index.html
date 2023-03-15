@@ -22,134 +22,75 @@
             background-color: rgb(24, 22, 22);
         }
         #popup {
-        position: fixed;
-        background-color: rgb(24,22,22);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 75%;
+    position: fixed;
+    background-color: rgb(24,22,22);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 80%;
+    padding: 20px;
+    z-index: 5;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+    @media only screen and (min-width: 1920px) {
+    #popup {
+    width: 75%;
+    height: 80%;
+    }
+    }
+
+    /* Stile für große Bildschirme */
+    @media only screen and (max-width: 1800px) {
+    #popup {
+        width: 50%;
+        height: 50%;
+    }
+    }
+
+    /* Stile für mittelgroße Bildschirme */
+    @media only screen and (max-width: 1199px) and (min-width: 992px) {
+    #popup {
+        width: 70%;
+        height: 60%;
+    }
+    }
+
+    /* Stile für kleine Bildschirme */
+    @media only screen and (max-width: 991px) and (min-width: 768px) {
+    #popup {
+        width: 80%;
+        height: 70%;
+    }
+    }
+
+    /* Stile für sehr kleine Bildschirme */
+    @media only screen and (max-width: 767px) {
+    #popup {
+        width: 90%;
         height: 80%;
-        padding: 20px;
-        z-index: 5;
-        border-radius: 1rem;
-        box-sizing: border-box;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        }
-
-        html.popup-open {
-        overflow: hidden;
-        }
-
-        @media only screen and (min-width: 1920px) {
-        #popup {
-        width: 75%;
-        height: 80%;
-        overflow-y: auto;
-        }
-        }
-
-        /* Stile für große Bildschirme */
-        @media only screen and (max-width: 1800px) {
-        #popup {
-            width: 50%;
-            height: 50%;
-            overflow-y: auto;
-        }
-        }
-
-        /* Stile für mittelgroße Bildschirme */
-        @media only screen and (max-width: 1199px) and (min-width: 992px) {
-        #popup {
-            width: 70%;
-            height: 60%;
-            overflow-y: auto;
-        }
-        }
-
-        /* Stile für kleine Bildschirme */
-        @media only screen and (max-width: 991px) and (min-width: 768px) {
-        #popup {
-            width: 80%;
-            height: 70%;
-            overflow-y: auto;
-        }
-        }
-
-        /* Stile für sehr kleine Bildschirme */
-        @media only screen and (max-width: 767px) {
-        #popup {
-            width: 90%;
-            height: 80%;
-            overflow-y: auto;
-        }
-        }
-
-        body.popup-open {
-        overflow: hidden;
-        }
+    }
+    }
 
 
-        /* Stile für 1920 x 1080 */
-        @media only screen and (min-width: 1920px) {
-        .UeberschriftPopup {
+    .UeberschriftPopup {
+        color: white;
         font-size: 300%;
-        }
-        .SchriftPopup {
+    }
+
+    .SchriftPopup {
+        color: white;
         font-size: 200%;
-        }
-        }    
-        /* Stile für große Bildschirme */
-        @media only screen and (max-width: 1800px) {
-        .UeberschriftPopup {
-        font-size: 4em;
-        }
-        .SchriftPopup {
-        font-size: 2.5em;
-        }
-        }
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 
-        /* Stile für mittelgroße Bildschirme */
-        @media only screen and (max-width: 1199px) and (min-width: 992px) {
-        .UeberschriftPopup {
-        font-size: 3em;
-        }
-        .SchriftPopup {
-        font-size: 2em;
-        }
-        }
-
-        /* Stile für kleine Bildschirme */
-        @media only screen and (max-width: 991px) and (min-width: 768px) {
-        .UeberschriftPopup {
-        font-size: 2em;
-        }
-        .SchriftPopup {
-        font-size: 1.5em;
-        }
-        }
-
-        /* Stile für sehr kleine Bildschirme */
-        @media only screen and (max-width: 767px) {
-        .UeberschriftPopup {
-        font-size: 1.5em;
-        }
-        .SchriftPopup {
-        font-size: 1em;
-        }
-        }
-        .UeberschriftPopup {
-            color: white;
-        }
-
-        .SchriftPopup {
-            color: white;
-            padding-left: 5%;
-            padding-right: 5%;
-        }
-
-        #closeBtn, #linkBtn, #linkBtn2 {
+    #closeBtn, #linkBtn, #linkBtn2 {
         display: inline-block;
         width: 25%;
         margin-top: 20px;
@@ -162,77 +103,15 @@
         cursor: pointer;
         font-size: 150%;
         font-weight: 800;
-        }
-        #closeBtn,
-        #linkBtn,
-        #linkBtn2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 25%;
-        margin-top: 20px;
-        margin-right: 10px;
-        padding: 2%;
-        background-color: rgb(19, 18, 18);
-        color: rgb(192, 0, 0);
-        border: none;
-        border-radius: 2rem;
-        cursor: pointer;
-        font-size: 150%;
-        font-weight: 800;
-        }
+    }
 
-        @media only screen and (min-width: 1920px) {
-        #closeBtn,
-        #linkBtn,
-        #linkBtn2 {
-            width: 25%;
-            margin-right: 10px;
-            margin-top: 20px;
-        }
-        }
+    #closeBtn:hover, #linkBtn:hover, #linkBtn2:hover {
+        background-color: black;
+    }
 
-        @media only screen and (max-width: 768px) {
-        #closeBtn,
-        #linkBtn,
-        #linkBtn2 {
-            width: 100%;
-            margin-right: 0;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        }
+    /* Media queries for responsive design */
 
-        @media only screen and (min-width: 769px) and (max-width: 1024px) {
-        #closeBtn,
-        #linkBtn,
-        #linkBtn2 {
-            width: 33.33%;
-            margin-right: 10px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        }
-
-        @media only screen and (max-width: 1800px) {
-        #closeBtn,
-        #linkBtn,
-        #linkBtn2 {
-            width: 25%;
-            margin-right: 10px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        }
-
-
-        #closeBtn:hover, #linkBtn:hover, #linkBtn2:hover {
-            background-color: black;
-        }
-
-        /* Media queries for responsive design */
-
-        @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 768px) {
         #popup {
             width: 90%;
             height: 90%;
@@ -587,38 +466,30 @@
     </div>
     
     <script>
+        // Check the screen resolution
+        if (window.innerWidth != 1920 || window.innerHeight != 1080) {
+            // Show the overlay and popup
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("popup").style.display = "block";
+        }
+
         function closePopup() {
             // Hide the popup and overlay
             document.getElementById("popup").style.display = "none";
             document.getElementById("overlay").style.display = "none";
-            // Remove the class that disables scrolling
-            document.documentElement.classList.remove('popup-open');
-        }
-    
-        function openPopup() {
-            // Show the overlay and popup
-            document.getElementById("overlay").style.display = "block";
-            document.getElementById("popup").style.display = "block";
-            // Add the class that disables scrolling
-            document.documentElement.classList.add('popup-open');
         }
     
         function openLink() {
             // Navigate to the link and hide the popup and overlay
             window.open("https://support.microsoft.com/de-de/windows/%C3%A4ndern-sie-ihre-bildschirmaufl%C3%B6sung-in-windows-5effefe3-2eac-e306-0b5d-2073b765876b", '_blank');
         }
-    
+
         function openLink2() {
             // Navigate to the link and hide the popup and overlay
             window.open("https://www.websiteplanet.com/de/webtools/screenresolution/", '_blank');
         }
-    
-        // Check the screen resolution
-        if (window.innerWidth != 1920 || window.innerHeight != 1080) {
-            openPopup();
-        }
+
     </script>
-    
     <div class="header">
         <a href="index.html"><img src="logo.png" alt="tradingdeck logo" class="header-img" href="index.html"></a>
 
