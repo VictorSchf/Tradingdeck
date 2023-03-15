@@ -21,7 +21,65 @@
             font-family: 'Work Sans', sans-serif;
             background-color: rgb(24, 22, 22);
         }
-        
+        #popup {
+        position: fixed;
+        background-color: rgb(24,22,22);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        height: 80%;
+        padding: 20px;
+        z-index: 5;
+        border-radius: 1rem;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        }
+
+        #closeBtn, #linkBtn, #linkBtn2 {
+        display: inline-block;
+        width: 25%;
+        margin-top: 20px;
+        margin-right: 10px;
+        padding: 2%;
+        background-color: rgb(19, 18, 18);
+        color: rgb(192, 0, 0);
+        border: none;
+        border-radius: 2rem;
+        cursor: pointer;
+        font-size: 150%;
+        font-weight: 800;
+        }
+
+
+        #closeBtn:hover, #linkBtn:hover, #linkBtn2:hover {
+            background-color: black;
+        }
+
+        .UeberschriftPopup {
+            color: white;
+            font-size: 300%;
+        }
+
+        .SchriftPopup {
+            color: white;
+            font-size: 200%;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 4;
+        }
+
         .header {
             width: auto;
             height: auto;
@@ -298,11 +356,54 @@
         .footer-kontakt {
             padding-left: 16px;
         }
+
     </style>
 
 </head>
 
 <body>
+    <div id="overlay"></div>
+    <div id="popup" style="display:none;">
+        <div class="UeberschriftPopup"><h2><center>Website Design sieht komisch aus?</center></h2></div>
+        <br>
+        <br>
+        <br>
+        <div class="SchriftPopup"><p><center>Willkommen auf unserer Website! Bitte beachten Sie, dass unsere Website für Bildschirme mit der Auflösung 1920 x 1080 optimiert ist. Wenn Sie ein Smartphone, Tablet oder einen Bildschirm mit einer anderen Auflösung verwenden, kann es sein, dass die Website nicht korrekt angezeigt wird. Wir möchten uns für eventuelle Unannehmlichkeiten entschuldigen und versichern Ihnen, dass wir daran arbeiten, das Problem zu beheben, um sicherzustellen, dass unsere Website auf jeder Auflösung optimal dargestellt wird. Vielen Dank für Ihr Verständnis!</center></p>
+        <br>
+        <p><center>Wichtig! <br> Nur weil ihr Monitor nicht nativ 1920 x 1080 verwendet kann dies in den Einstellungen geändert werden.</center></p>
+        </div>
+        <div style="text-align:center;">
+            <button id="closeBtn" onclick="closePopup()" style="display:inline-block;">Schließen</button>
+            <button id="linkBtn" onclick="openLink()" style="display:inline-block;">Auflösung ändern</button>
+            <button id="linkBtn2" onclick="openLink2()" style="display:inline-block;">Auflösung herausfinden</button>
+        </div>  
+    </div>
+    
+    <script>
+        // Check the screen resolution
+        if (window.innerWidth != 1920 || window.innerHeight != 1080) {
+            // Show the overlay and popup
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+            // Hide the popup and overlay
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    
+        function openLink() {
+            // Navigate to the link and hide the popup and overlay
+            window.open("https://support.microsoft.com/de-de/windows/%C3%A4ndern-sie-ihre-bildschirmaufl%C3%B6sung-in-windows-5effefe3-2eac-e306-0b5d-2073b765876b", '_blank');
+        }
+
+        function openLink2() {
+            // Navigate to the link and hide the popup and overlay
+            window.open("https://www.websiteplanet.com/de/webtools/screenresolution/", '_blank');
+        }
+
+    </script>
     <div class="header">
         <a href="index.html"><img src="logo.png" alt="tradingdeck logo" class="header-img" href="index.html"></a>
 
