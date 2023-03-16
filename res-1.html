@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Screen Resolution Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Screen Resolution Checker</h1>
+  <p>Your screen resolution is:</p>
+  <p id="resolution"></p>
+
+  <script>
+    // get the screen resolution and display it on the page
+    var resolutionElement = document.getElementById("resolution");
+    resolutionElement.innerHTML = window.screen.width + " x " + window.screen.height;
+  </script>
+</body>
+</html>

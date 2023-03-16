@@ -21,6 +21,11 @@
             font-family: 'Work Sans', sans-serif;
             background-color: rgb(24, 22, 22);
         }
+        html {
+            overflow-y: scroll;
+            scrollbar-color: #w1;
+        }
+
         #popup {
         position: fixed;
         background-color: rgb(24,22,22);
@@ -30,7 +35,7 @@
         width: 75%;
         height: 80%;
         padding: 20px;
-        z-index: 5;
+        z-index: 999;
         border-radius: 1rem;
         box-sizing: border-box;
         flex-direction: column;
@@ -284,7 +289,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.6);
-            z-index: 4;
+            z-index: 998;
         }
 
         .header {
@@ -292,6 +297,17 @@
             height: auto;
             background-color: #000;
             justify-content: space-between;
+            position: fixed;
+            z-index: 10;
+        }
+        .header2 {
+            width: auto;
+            height: auto;
+            background-color: #000;
+            justify-content: space-between;
+            align-items: center;
+
+            z-index: 10;
         }
         
         .header-img {
@@ -563,6 +579,59 @@
         .footer-kontakt {
             padding-left: 16px;
         }
+        .dropdown {
+        display: flex;
+        align-items: unset;
+        position: absolute;
+        top: 92px;
+        left: 600px;
+        }
+
+        .dropdown-icon {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        z-index: 999;
+        transform: translate(1200px, -35px);
+        }
+
+        .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #000000;
+        min-width: 11em;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 11;
+        border-radius: 0.25em;
+        transform: translate(1025px);
+        padding-left: 1em;
+        padding-right: 1em;
+        }
+
+        .dropdown-menu a {
+        color: rgb(192, 0, 0);
+        text-decoration: none;
+        display: block;
+        font-size: 1.4em;
+        font-weight: 700;
+        text-align: left;
+        line-height: 1.5em;
+        }
+
+        .dropdown-menu a:hover {
+        text-decoration: underline;
+        }
+
+
+        .show {
+            display: block;
+        }
+
+        .NSA{
+            color: #fff;
+        }
 
     </style>
 
@@ -594,7 +663,7 @@
         <button id="linkBtn2" onclick="openLink2()" style="display:inline-block;">Auflösung herausfinden</button>
         <br><br>
         <input type="checkbox" id="dontShowAgainCheckbox">
-        <label for="dontShowAgainCheckbox">Nicht erneut zeigen</label>
+        <label for="dontShowAgainCheckbox"><span class="NSA">Nicht erneut zeigen</span></label>
     </div>
 </div>
 <script>
@@ -612,15 +681,20 @@
     }
 
     function openPopup() {
-        // Check the "don't show again" preference in the cookie
-        if (document.cookie.indexOf("dontShowAgain=true") == -1) {
-            // Show the overlay and popup
-            document.getElementById("overlay").style.display = "block";
-            document.getElementById("popup").style.display = "block";
-            // Add the class that disables scrolling
-            document.documentElement.classList.add('popup-open');
-        }
+    // Check the "don't show again" preference in the cookie
+    if (document.cookie.indexOf("dontShowAgain=true") == -1) {
+        // Show the overlay and popup
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("popup").style.display = "block";
+        // Add the class that disables scrolling
+        document.documentElement.classList.add('popup-open');
+    } else {
+        // Hide the overlay
+        document.getElementById("overlay").style.display = "none";
     }
+    }
+
+
 
     function openLink() {
         // Navigate to the link and hide the popup and overlay
@@ -651,19 +725,56 @@
     };
 </script>
 
-
-    
-    <div class="header">
-        <a href="index.html"><img src="logo.png" alt="tradingdeck logo" class="header-img" href="index.html"></a>
-
-        <div class="nav">
-            <a href="Unsere-Favoriten.html" class="nav-single fav">Unsere Favoriten</a>
-            <a href="FAQ.html" class="nav-single faq">FAQ</a>
-            <a href="Aktien.html" class="nav-single aktien">Aktien</a>
-            <a href="Kryptowährungen.html" class="nav-single krypto">Kryptowährungen</a>
-            <a href="Über-Uns.html" class="nav-single über uns">Über uns</a>
+<div class="header">
+    <div class="dropdown">
+        <img src="menu-icon.png" alt="menu icon" class="dropdown-icon" onclick="toggleDropdown()">
+        <div class="dropdown-menu" id="dropdown-menu">
+            <a href="Problems.html">Probleme</a>
+            <a href="Features.html">Features</a>
+            <a href="Über-Uns.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutzerklärung</a>
+            <a href="tos.html">TOS</a>
         </div>
     </div>
+
+    <a href="index.html"><img src="logo2.png" alt="tradingdeck logo" class="header-img"></a>
+
+    <div class="nav">
+        <a href="Unsere-Favoriten.html" class="nav-single fav">Unsere Favoriten</a>
+        <a href="FAQ.html" class="nav-single faq">FAQ</a>
+        <a href="Aktien.html" class="nav-single aktien">Aktien</a>
+        <a href="Kryptowährungen.html" class="nav-single krypto">Kryptowährungen</a>
+
+    </div>
+</div>
+<div class="header2">
+    <a href="index.html"><img src="logo2.png" alt="tradingdeck logo" class="header-img" href="index.html"></a>
+
+    <div class="nav">
+        <a href="Unsere-Favoriten.html" class="nav-single fav">Unsere Favoriten</a>
+        <a href="FAQ.html" class="nav-single faq">FAQ</a>
+        <a href="Aktien.html" class="nav-single aktien">Aktien</a>
+        <a href="Kryptowährungen.html" class="nav-single krypto">Kryptowährungen</a>
+
+    </div>
+</div>
+<script>
+    function toggleDropdown() {
+        var dropdownMenu = document.getElementById("dropdown-menu");
+        dropdownMenu.classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdown-icon')) {
+            var dropdownMenu = document.getElementById("dropdown-menu");
+            if (dropdownMenu.classList.contains('show')) {
+                dropdownMenu.classList.remove('show');
+            }
+        }
+    }
+</script>
+    
+
     <div class="start">
         <img src="tradingbildschirme2 1080p.jpeg" class="img-startpage" usemap="#image-map">
 
