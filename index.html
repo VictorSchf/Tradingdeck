@@ -173,7 +173,7 @@
         margin-top: 20px;
         margin-right: 10px;
         padding: 2%;
-        background-color: rgb(19, 18, 18);
+        background-color: rgb(255, 255, 255);
         color: rgb(192, 0, 0);
         border: none;
         border-radius: 2rem;
@@ -227,7 +227,7 @@
 
 
         #closeBtn:hover, #linkBtn:hover, #linkBtn2:hover {
-            background-color: black;
+            background-color: rgb(138, 138, 138);
         }
 
         /* Media queries for responsive design */
@@ -569,55 +569,89 @@
 </head>
 
 <body>
-    <div id="overlay"></div>
-    <div id="popup" style="display:none;">
-        <div class="UeberschriftPopup"><h2><center>Überprüfen sie ihre Auflösung!</center></h2></div>
-        <br>
-        <br>
-        <br>
-        <div class="SchriftPopup"><p><center>Willkommen auf unserer Website! Bitte beachten Sie, dass unsere Website für Bildschirme mit der Auflösung 1920 x 1080 optimiert ist. Wenn Sie ein Smartphone, Tablet oder einen Bildschirm mit einer anderen Auflösung verwenden, kann es sein, dass die Website nicht korrekt angezeigt wird. Wir möchten uns für eventuelle Unannehmlichkeiten entschuldigen und versichern Ihnen, dass wir daran arbeiten, das Problem zu beheben, um sicherzustellen, dass unsere Website auf jeder Auflösung optimal dargestellt wird. Vielen Dank für Ihr Verständnis!</center></p>
-        <br>
-        <p><center>Wichtig! <br> Nur weil ihr Monitor nicht nativ 1920 x 1080 verwendet kann dies in den Einstellungen geändert werden.</center></p>
-        </div>
-        <div style="text-align:center;">
-            <button id="closeBtn" onclick="closePopup()" style="display:inline-block;">Schließen</button>
-            <button id="linkBtn" onclick="openLink()" style="display:inline-block;">Auflösung ändern</button>
-            <button id="linkBtn2" onclick="openLink2()" style="display:inline-block;">Auflösung herausfinden</button>
-        </div>  
+<div id="overlay"></div>
+<div id="popup" style="display:none;">
+    <div class="UeberschriftPopup">
+        <h2>
+            <center>Überprüfen sie ihre Auflösung!</center>
+        </h2>
     </div>
-    
-    <script>
-        function closePopup() {
-            // Hide the popup and overlay
-            document.getElementById("popup").style.display = "none";
-            document.getElementById("overlay").style.display = "none";
-            // Remove the class that disables scrolling
-            document.documentElement.classList.remove('popup-open');
+    <br>
+    <br>
+    <br>
+    <div class="SchriftPopup">
+        <p>
+            <center>Willkommen auf unserer Website! Bitte beachten Sie, dass unsere Website für Bildschirme mit der Auflösung 1920 x 1080 optimiert ist. Wenn Sie ein Smartphone, Tablet oder einen Bildschirm mit einer anderen Auflösung verwenden, kann es sein, dass die Website nicht korrekt angezeigt wird. Wir möchten uns für eventuelle Unannehmlichkeiten entschuldigen und versichern Ihnen, dass wir daran arbeiten, das Problem zu beheben, um sicherzustellen, dass unsere Website auf jeder Auflösung optimal dargestellt wird. Vielen Dank für Ihr Verständnis!</center>
+        </p>
+        <br>
+        <p>
+            <center>Wichtig! <br> Nur weil ihr Monitor nicht nativ 1920 x 1080 verwendet kann dies in den Einstellungen geändert werden.</center>
+        </p>
+    </div>
+    <div style="text-align:center;">
+        <button id="closeBtn" onclick="closePopup()" style="display:inline-block;">Schließen</button>
+        <button id="linkBtn" onclick="openLink()" style="display:inline-block;">Auflösung ändern</button>
+        <button id="linkBtn2" onclick="openLink2()" style="display:inline-block;">Auflösung herausfinden</button>
+        <br><br>
+        <input type="checkbox" id="dontShowAgainCheckbox">
+        <label for="dontShowAgainCheckbox">Nicht erneut zeigen</label>
+    </div>
+</div>
+<script>
+    function closePopup() {
+        // Hide the popup and overlay
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+        // Remove the class that disables scrolling
+        document.documentElement.classList.remove('popup-open');
+
+        // Save the "don't show again" preference in a cookie
+        if (document.getElementById("dontShowAgainCheckbox").checked) {
+            document.cookie = "dontShowAgain=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
         }
-    
-        function openPopup() {
+    }
+
+    function openPopup() {
+        // Check the "don't show again" preference in the cookie
+        if (document.cookie.indexOf("dontShowAgain=true") == -1) {
             // Show the overlay and popup
             document.getElementById("overlay").style.display = "block";
             document.getElementById("popup").style.display = "block";
             // Add the class that disables scrolling
             document.documentElement.classList.add('popup-open');
         }
-    
-        function openLink() {
-            // Navigate to the link and hide the popup and overlay
-            window.open("https://support.microsoft.com/de-de/windows/%C3%A4ndern-sie-ihre-bildschirmaufl%C3%B6sung-in-windows-5effefe3-2eac-e306-0b5d-2073b765876b", '_blank');
-        }
-    
-        function openLink2() {
-            // Navigate to the link and hide the popup and overlay
-            window.open("https://www.websiteplanet.com/de/webtools/screenresolution/", '_blank');
-        }
-    
-        // Check the screen resolution
+    }
+
+    function openLink() {
+        // Navigate to the link and hide the popup and overlay
+        window.open("https://support.microsoft.com/de-de/windows/%C3%A4ndern-sie-ihre-bildschirmaufl%C3%B6sung-in-windows-5effefe3-2eac-e306-0b5d-2073b765876b", '_blank');
+    }
+
+    function openLink2() {
+        // Navigate to the link and hide the popup and overlay
+        window.open("https://www.websiteplanet.com/de/webtools/screenresolution/", '_blank');
+    }
+
+    function checkResolution() {
         if (window.innerWidth != 1920 || window.innerHeight != 1080) {
             openPopup();
         }
-    </script>
+    }
+
+    window.onload = function() {
+        checkResolution();
+        // Add event listener to the checkbox
+        document.getElementById("dontShowAgainCheckbox").addEventListener("change", function() {
+            if (this.checked) {
+                document.cookie = "dontShowAgain=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+            } else {
+                document.cookie = "dontShowAgain=false; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+            }
+        });
+    };
+</script>
+
+
     
     <div class="header">
         <a href="index.html"><img src="logo.png" alt="tradingdeck logo" class="header-img" href="index.html"></a>
