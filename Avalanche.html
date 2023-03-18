@@ -253,18 +253,30 @@
     document.addEventListener('DOMContentLoaded', function() {
         let div = document.querySelector('div');
         let button = document.querySelector('button');
+        let filename = window.location.pathname.split('/').pop();
+        if (document.cookie.indexOf('Krypto-Fav=' + filename) !== -1) {
+            button.classList.add('chosen');
+        }
         div.addEventListener('click', () => {
             event.currentTarget.classList.add('chosen');
             console.log('Event-Handler für Div.');
+            createCookie();
         });
         button.addEventListener('click', event => {
             event.currentTarget.classList.add('chosen');
             console.log('Event-Handler für Button.');
+            createCookie();
             if (document.getElementById('check')
                 .checked) {
                 event.stopPropagation();
             }
         });
+
+        function createCookie() {
+            let expirationDate = new Date();
+            expirationDate.setFullYear(expirationDate.getFullYear() + 100); // Set expiration date to 100 years from now
+            document.cookie = "Krypto-Fav=" + filename + "; expires=" + expirationDate.toUTCString();
+        }
     });
 </script>
 
