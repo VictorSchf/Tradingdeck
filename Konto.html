@@ -370,6 +370,12 @@ function authenticate() {
   var storedUsername = getCookie("username");
   var storedPassword = getCookie("password");
   if (username === storedUsername && password === storedPassword) {
+    var loginCookie = getCookie("Login");
+    if (loginCookie === "") {
+      document.cookie = "Login=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Set cookie to never expire and apply to all pages
+    } else {
+      document.cookie = "Login=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+    }
     document.getElementById("logged-in-username").innerHTML = storedUsername;
     document.getElementById("login-success-popup").style.display = "block";
     setTimeout(function() {
@@ -379,6 +385,13 @@ function authenticate() {
     document.getElementById("incorrect-login-popup").style.display = "block";
   }
 }
+
+
+
+
+
+
+
 
 </script>
     

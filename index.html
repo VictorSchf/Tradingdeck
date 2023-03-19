@@ -347,15 +347,17 @@
         .nav {
             text-decoration-color: white;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             object-position: right;
             float: right;
-            margin-right: 0%;
+            margin-right: 12rem;
             width: 75%;
             height: 100%;
             font-weight: 700;
             font-size: 1.4em;
             margin-top: 4rem;
-            margin-left: 1rem;
         }
         
         .nav-single:hover {
@@ -604,10 +606,11 @@
         min-width: 11em;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 11;
-        border-radius: 0.25em;
+        border-radius: 0.5em;
         transform: translate(1025px);
         padding-left: 1em;
         padding-right: 1em;
+        
         }
 
         .dropdown-menu a {
@@ -732,20 +735,18 @@
             <a href="Problems.html">Probleme</a>
             <a href="Features.html">Features</a>
             <a href="Über-Uns.html">Impressum</a>
+            <a href="FAQ.html" class="nav-single faq">FAQ</a>
             <a href="datenschutz.html">Datenschutzerklärung</a>
             <a href="tos.html">TOS</a>
-            <a href="Konto.html">Mein Konto</a>
         </div>
     </div>
 
     <a href="index.html"><img src="logo2.png" alt="tradingdeck logo" class="header-img"></a>
 
     <div class="nav">
-        <a href="Unsere-Favoriten.html" class="nav-single fav">Unsere Favoriten</a>
-        <a href="FAQ.html" class="nav-single faq">FAQ</a>
         <a href="Aktien.html" class="nav-single aktien">Aktien</a>
         <a href="Kryptowährungen.html" class="nav-single krypto">Kryptowährungen</a>
-
+        
     </div>
 </div>
 <div class="header2">
@@ -776,8 +777,21 @@
 </script>
 
 <div class="Konto">
-    <a href="Konto.html"><img src="Konto.png" alt="Mein Konto Logo" class="Konto-img" href="Konto.html"></a>
-</div>
+    <a href="#" onclick="redirectKonto()"><img src="Konto.png" alt="Mein Konto Logo" class="Konto-img"></a>
+  </div>
+  
+  <script>
+    function redirectKonto() {
+      const loginCookie = document.cookie.match('(^|;)\\s*' + 'Login' + '\\s*=\\s*([^;]+)')?.pop() || '';
+      if (loginCookie === 'true') {
+        window.location.href = 'Mein-Konto.html';
+      } else {
+        window.location.href = 'Konto.html';
+      }
+    }
+    </script>
+    
+  
 <style>
     .Konto-img {
     width: 80px;

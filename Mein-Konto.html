@@ -74,11 +74,22 @@
             box-shadow: 1rem;
         }
         
-        .Überschrift {
-            font-size: 5rem;
-            font-weight: 500;
-            margin-left: 1.3rem;
-        }
+        .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Überschrift {
+  font-size: 5rem;
+  font-weight: 500;
+  margin-left: 1.3rem;
+}
+
+.Logout {
+  margin-right: 1.3rem;
+}
+
         
         .map {
             margin-left: 3rem;
@@ -123,6 +134,65 @@
             text-decoration: underline;
             cursor: pointer;
         }
+        .Logout {
+          font-size: 4rem;
+          font-weight: 500;
+          color: red;
+        }
+
+        .Logout:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+        .popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: white;
+  color: rgb(192, 0, 0);
+  font-weight: 500;
+  margin: 10% auto;
+  padding: 20px;
+  height: 25%;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+}
+
+.popup-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  background-color: black;
+  border: none;
+  font-weight: 700;
+  color: rgb(192, 0, 0);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 10px;
+  height: 30%;
+  width: 30%;
+}
+
+.popup-content button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
     </style>
 </head>
 
@@ -138,18 +208,56 @@
             <a href="Unsere-Favoriten.html" class="nav-single fav">Unsere Favoriten</a>
         </div>
     </div>
-    <div class="Alles-über-uns">
-        <span class="Überschrift">Dein Konto </span> <br>
-        <span class="Überschrift">Willkomen zurück [name]</span>
-        <script>
-            // Fetch the "username" cookie
-            var username = document.cookie.replace(/(?:(?:^|.*;\s*)username\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+      
+      <div class="Alles-über-uns">
+        <div class="container">
+          <span class="Überschrift">Dein Konto</span>
+          <span class="Logout" onclick="showPopup()">Ausloggen</span>
+        </div>
+      
+      <div id="logout-popup" class="popup">
+        <div class="popup-content">
+          <h2>Möchten Sie sich wirklich abmelden?</h2>
+          <button onclick="logout()">Ja</button>
+          <button onclick="hidePopup()">Nein</button>
+        </div>
+      </div>
+      
+      <script>
+      function showPopup() {
+        document.getElementById("logout-popup").style.display = "block";
+      }
+      
+      function hidePopup() {
+        document.getElementById("logout-popup").style.display = "none";
+      }
+      
+      function logout() {
+  // Change the value of the "Login" cookie to "false"
+  document.cookie = "Login=false; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Set cookie to never expire and apply to all pages
+  // Wait for 2 seconds and redirect to index.html
+  setTimeout(function() {
+    window.location.href = "index.html";
+  }, 2000);
+}
 
-            // Find the "[name]" element and replace the placeholder with the username
-            var nameElement = document.querySelector('.Überschrift:nth-of-type(2)');
-            nameElement.textContent = nameElement.textContent.replace("[name]", username);
+      </script>
+      
+    
+      
+      <span class="Überschrift">Willkommen zurück [name]</span>
 
-        </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // Fetch the "username" cookie
+          var username = document.cookie.replace(/(?:(?:^|.*;\s*)username\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+      
+          // Find the "[name]" element and replace the placeholder with the username
+          var nameElement = document.querySelector('.Überschrift:nth-of-type(2)');
+          nameElement.textContent = nameElement.textContent.replace("[name]", username);
+        });
+      </script>
+      
         <script>
             'use strict';
             document.addEventListener('DOMContentLoaded', function() {
