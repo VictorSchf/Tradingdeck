@@ -248,16 +248,24 @@
       <span class="Überschrift">Willkommen zurück [name]</span>
 
       <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          // Fetch the "username" cookie
-          var username = document.cookie.replace(/(?:(?:^|.*;\s*)username\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-      
-          // Find the "[name]" element and replace the placeholder with the username
-          var nameElement = document.querySelector('.Überschrift:nth-of-type(2)');
-          nameElement.textContent = nameElement.textContent.replace("[name]", username);
-        });
-      </script>
-      
+  document.addEventListener("DOMContentLoaded", function() {
+    // Fetch the "username" cookie
+    var username = getCookie("username");
+  
+    // Find the "[name]" element and replace the placeholder with the username
+    var nameElement = document.querySelector('.Überschrift:nth-of-type(2)');
+    if (username) {
+      nameElement.textContent = nameElement.textContent.replace("[name]", username);
+    } else {
+      nameElement.textContent = "Willkommen zurück!";
+    }
+  });
+
+  function getCookie(name) {
+    // ...function code here...
+  }
+</script>
+
         <script>
   'use strict';
   document.addEventListener('DOMContentLoaded', function() {
