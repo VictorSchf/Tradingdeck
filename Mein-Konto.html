@@ -259,44 +259,49 @@
       </script>
       
         <script>
-            'use strict';
-            document.addEventListener('DOMContentLoaded', function() {
-              let favAktie = document.getElementById('favAktie');
-              let aktienFavCookie = getCookie('Aktien-Fav');
-              if (aktienFavCookie) {
-                favAktie.textContent = aktienFavCookie.split('.')[0];
-                favAktie.classList.add('clickable');
-                favAktie.addEventListener('click', () => {
-                  window.location.href = aktienFavCookie;
-                });
-              }
-            
-              let favKrypto = document.getElementById('favKrypto');
-              let kryptoFavCookie = getCookie('Krypto-Fav');
-              if (kryptoFavCookie) {
-                favKrypto.textContent = kryptoFavCookie.split('.')[0];
-                favKrypto.classList.add('clickable');
-                favKrypto.addEventListener('click', () => {
-                  window.location.href = kryptoFavCookie;
-                });
-              }
-            });
-            
-            function getCookie(name) {
-              let cookieValue = '';
-              if (document.cookie && document.cookie !== '') {
-                let cookies = document.cookie.split(';');
-                for (let i = 0; i < cookies.length; i++) {
-                  let cookie = cookies[i].trim();
-                  if (cookie.startsWith(name + '=')) {
-                    cookieValue = cookie.substring(name.length + 1);
-                    break;
-                  }
-                }
-              }
-              return cookieValue;
-            }
-          </script>
+  'use strict';
+  document.addEventListener('DOMContentLoaded', function() {
+    let favAktie = document.getElementById('favAktie');
+    let aktienFavCookie = getCookie('Aktien-Fav');
+    if (aktienFavCookie) {
+      favAktie.textContent = aktienFavCookie.split('.')[0];
+      favAktie.classList.add('clickable');
+      favAktie.addEventListener('click', () => {
+        window.location.href = aktienFavCookie;
+      });
+    } else {
+      favAktie.textContent = 'Du hast noch keine Favoriten';
+    }
+  
+    let favKrypto = document.getElementById('favKrypto');
+    let kryptoFavCookie = getCookie('Krypto-Fav');
+    if (kryptoFavCookie) {
+      favKrypto.textContent = kryptoFavCookie.split('.')[0];
+      favKrypto.classList.add('clickable');
+      favKrypto.addEventListener('click', () => {
+        window.location.href = kryptoFavCookie;
+      });
+    } else {
+      favKrypto.textContent = 'Du hast noch keine Favoriten';
+    }
+  });
+  
+  function getCookie(name) {
+    let cookieValue = '';
+    if (document.cookie && document.cookie !== '') {
+      let cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim();
+        if (cookie.startsWith(name + '=')) {
+          cookieValue = cookie.substring(name.length + 1);
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+</script>
+
           
           <div class="txt">
             <div class="UmFeat">
