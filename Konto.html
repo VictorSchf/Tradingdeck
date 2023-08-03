@@ -159,7 +159,7 @@
     text-align: center;
     margin: 20px 0;
     font-size: 14px;
-    color: #ccc;
+    color: #bd2b2b;
   }
 
   .form-separator hr {
@@ -249,29 +249,29 @@
 
 
     <form>
-      <h1>Login</h1>
-      <label for="username">Username</label>
+      <h1>Einloggen</h1>
+      <label for="username">Nutzername</label>
       <input type="text" id="username" name="username" required>
-      <label for="password">Password</label>
+      <label for="password">Passwort</label>
       <input type="password" id="password" name="password" required>
-      <input type="submit" value="Login">
+      <input type="submit" value="Anmelden">
       <div class="form-separator">
-        <hr>or<hr>
+        <hr>oder einen neuen...<hr>
       </div>
       <div class="signup-link">
-        <button type="button" onclick="openSignup()">Sign Up</button>
+        <button type="button" onclick="openSignup()">Account erstellen</button>
       </form>
       <!-- Signup Popup -->
       <div id="signup-popup" class="popup">
         <div class="popup-content">
           <span class="close" onclick="closeSignup()">&times;</span>
-          <h2>Sign Up</h2>
+          <h2>Erstellen sie ein neues Konto</h2>
           <form>
-            <label for="new-username">New Username</label>
+            <label for="new-username">Ihr Nutzername</label>
             <input type="text" id="new-username" name="new-username" required>
-            <label for="new-password">New Password</label>
+            <label for="new-password">Ihr Passwort</label>
             <input type="password" id="new-password" name="new-password" required>
-            <button type="button" onclick="signup()">Create Account</button>
+            <button type="button" onclick="signup()">Konto Erstellen</button>
           </form>
         </div>
       </div>
@@ -279,16 +279,16 @@
       <div id="login-success-popup" class="popup">
         <div class="popup-content">
           <span class="close" onclick="closeLoginSuccess()">&times;</span>
-          <h2>Login Successful!</h2>
-          <p>Welcome back, <span id="logged-in-username"></span>!</p>
+          <h2>Einloggen Erfolgreich!</h2>
+          <p>Willkommen zurück, <span id="logged-in-username"></span>!</p>
         </div>
       </div>
       <!-- Incorrect Login Popup -->
       <div id="incorrect-login-popup" class="popup">
         <div class="popup-content">
           <span class="close" onclick="closeIncorrectLogin()">&times;</span>
-          <h2>Incorrect Username or Password</h2>
-          <p>Please try again or sign up for a new account.</p>
+          <h2>Falscher Nutzername oder Passwort</h2>
+          <p>Bitte versuchen sie es nochmal, oder melden sie sich beim Administrator.</p>
         </div>
       </div>
       <script>
@@ -308,10 +308,10 @@
     expirationDate.setFullYear(expirationDate.getFullYear() + 10); // Set expiration date to 10 years from now
     document.cookie = "username=" + username + "; expires=" + expirationDate.toUTCString();
     document.cookie = "password=" + password + "; expires=" + expirationDate.toUTCString();
-    alert("Account created successfully! You can now log in.");
+    alert("Konto erfolgreich erstellt, sie können sich jetzt anmelden.");
     closeSignup();
   } else {
-    alert("Username must be at least 3 characters long, and password must be at least 5 characters long.");
+    alert("Der Nutzername muss mindestens drei Zeichen lang sein und das Passwort minestens fünf!");
   }
 }
 
