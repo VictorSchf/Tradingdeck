@@ -128,17 +128,21 @@
 </head>
 
 <body>
-    <div class="header">
-        <a href="index.html"><img src="logo.png" alt="tradingdeck logo" class="header-img" href="index.html"></a>
+    <div id="navbar-container"></div>
 
-        <div class="nav">
-            <a href="Über-Uns.html" class="nav-single über uns">Über uns</a>
-            <a href="Kryptowährungen.html" class="nav-single krypto">Kryptowährungen</a>
-            <a href="Aktien.html" class="nav-single krypto">Aktien</a>
-            <a href="FAQ.html" class="nav-single faq">FAQ</a>
-            <a href="Unsere-Favoriten.html" class="nav-single fav">Unsere Favoriten</a>
-        </div>
-    </div>
+<script>
+// Fetch and insert the Navbar.html content
+fetch('Navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    const navbarContainer = document.getElementById('navbar-container');
+    navbarContainer.innerHTML = data;
+  })
+  .catch(error => console.error('Error fetching Navbar.html:', error));
+</script>
+
+
+    
 
     <div class="chart">
         <!-- TradingView Widget BEGIN -->

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <title>Tradingdeck</title>
+        <style>
+            a {
+            text-decoration: none;
+            color: rgb(192, 0, 0);
+            }
+            
+            body {
+                font-family: 'Work Sans', sans-serif;
+                background-color: rgb(24, 22, 22);
+            }
+            html {
+                overflow-y: scroll;
+            }
+            .header {
+                width: 100%;
+                height: auto;
+                background-color: #000;
+                justify-content: space-between;
+                z-index: 10;
+            }
+            
+            
+            .header-img {
+                width: 8%;
+                height: 95%;
+                margin-left: 1%;
+                object-fit: cover;
+            }
+            
+            .header-img:hover {
+                animation: spin 3s;
+                transition: 1s;
+            }
+        
+            @keyframes spin {
+                0% {
+                    width: 8%;
+                    height: 95%;
+                    margin-left: 1%;
+                    object-fit: cover;
+                }
+                100% {
+                    width: 8%;
+                    height: 95%;
+                    margin-left: 1%;
+                    object-fit: cover;
+                    transform: rotate(7200deg);
+                }
+            }
+            
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .nav {
+                text-decoration-color: white;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                object-position: right;
+                float: right;
+                margin-right: 12rem;
+                width: 75%;
+                height: 100%;
+                font-weight: 700;
+                font-size: 2rem;
+                margin-top: 4rem;
+            }
+            
+            .nav-single:hover {
+                text-decoration: underline;
+            }
+            
+            .nav-single {
+                margin-right: 10rem;
+            }
+
+            .dropdown {
+            display: flex;
+            align-items: unset;
+            position: absolute;
+            top: 92px;
+            left: 600px;
+            }
+
+            .dropdown-icon {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 999;
+            transform: translate(1200px, -35px);
+            }
+
+            .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: #000000;
+            min-width: 11em;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 11;
+            border-radius: 0.5em;
+            transform: translate(1025px);
+            padding-left: 1em;
+            padding-right: 1em;
+            
+            }
+
+            .dropdown-menu a {
+            color: rgb(192, 0, 0);
+            text-decoration: none;
+            display: block;
+            font-size: 1.4em;
+            font-weight: 700;
+            text-align: left;
+            line-height: 1.5em;
+            }
+
+            .dropdown-menu a:hover {
+            text-decoration: underline;
+            }
+
+            .Konto-img {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 2.5rem;
+            right: 8rem;
+            z-index: 12;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="dropdown">
+                <img src="menu-icon.png" alt="menu icon" class="dropdown-icon" onclick="toggleDropdown()">
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="Problems.html">Probleme</a>
+                    <a href="Features.html">Features</a>
+                    <a href="Über-Uns.html">Impressum</a>
+                    <a href="FAQ.html" class="nav-single faq">FAQ</a>
+                    <a href="datenschutz.html">Datenschutzerklärung</a>
+                    <a href="tos.html">TOS</a>
+                </div>
+            </div>
+        
+            <a href="index.html"><img src="logo2.png" alt="tradingdeck logo" class="header-img"></a>
+        
+            <div class="nav">
+                <a href="Aktien.html" class="nav-single aktien">Aktien</a>
+                <a href="Kryptowährungen.html" class="nav-single krypto">Kryptowährungen</a>
+                
+            </div>
+        </div>
+        
+        <script>
+            function toggleDropdown() {
+                var dropdownMenu = document.getElementById("dropdown-menu");
+                dropdownMenu.classList.toggle("show");
+            }
+        
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropdown-icon')) {
+                    var dropdownMenu = document.getElementById("dropdown-menu");
+                    if (dropdownMenu.classList.contains('show')) {
+                        dropdownMenu.classList.remove('show');
+                    }
+                }
+            }
+        </script>
+        
+        <div class="Konto">
+            <a href="#" onclick="redirectKonto()"><img src="Konto.png" alt="Mein Konto Logo" class="Konto-img"></a>
+          </div>
+          
+          <script>
+            function redirectKonto() {
+              const loginCookie = document.cookie.match('(^|;)\\s*' + 'Login' + '\\s*=\\s*([^;]+)')?.pop() || '';
+              if (loginCookie === 'true') {
+                window.location.href = 'Mein-Konto.html';
+              } else {
+                window.location.href = 'Konto.html';
+              }
+            }
+            </script>
+    </body>
+</html>
